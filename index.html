@@ -1,1 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ryan Thompson Search | Executive search and senior recruitment</title>
+<meta name="description" content="Ryan Thompson Search has placed over 5,000 senior leaders, directors and specialists. Retained executive search, board search and leadership assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --night:#071330; --deep:#0c1e45; --steel:#1f3a6b;
+  --amber:#D1A94E; --amber-ink:#7a5a14;
+  --bg:#F4F6FA; --bg-2:#E8EDF5; --card:#FFFFFF; --text:#0b1730; --muted:#51607a; --line:#cfd7e6;
+  --serif:'Instrument Serif','Iowan Old Style','Palatino Linotype',Georgia,serif;
+  --sans:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#08122b;--bg-2:#0c1a3a;--card:#10234a;--text:#eaeff9;--muted:#a4b3d0;--line:#223a66;--amber-ink:#D1A94E}
+}
+:root[data-theme="dark"]{--bg:#08122b;--bg-2:#0c1a3a;--card:#10234a;--text:#eaeff9;--muted:#a4b3d0;--line:#223a66;--amber-ink:#D1A94E}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--night);scroll-behavior:smooth;scroll-padding-top:80px;height:100%}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+p{margin:0 0 1em}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.02}
+h3{font-size:1.7rem;line-height:1.1}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+section{position:relative}
+.pad{padding:120px 0}
+.lead{font-size:1.15rem;color:var(--muted);max-width:56ch}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:#000;padding:10px 16px;z-index:100}
+.skip:focus{left:8px}
 
+/* header */
+header.site{position:fixed;top:0;left:0;right:0;z-index:60;padding-top:env(safe-area-inset-top,0px);transition:background .35s,box-shadow .35s;color:#fff}
+header.site.solid{background:rgba(7,19,48,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);font-size:1.55rem;white-space:nowrap}
+.mark{width:22px;height:22px;border:1.5px solid rgba(255,255,255,.85);position:relative;display:inline-block}
+.mark::after{content:"";position:absolute;left:5px;top:5px;width:8px;height:10px;background:var(--amber)}
+nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:#d9e2f4;position:relative;padding:6px 0}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav a:hover::after{transform:scaleX(1)}
+nav a:hover{color:#fff}
+.btn{display:inline-block;padding:15px 28px;background:var(--amber);color:#14100a;font-weight:600;text-decoration:none;border:0;border-radius:2px;font:inherit;font-weight:600;cursor:pointer;transition:transform .25s,background .25s}
+.btn:hover{background:#E3C06C;transform:translateY(-2px)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.line:hover{background:rgba(255,255,255,.08)}
+nav .cta{background:var(--amber);color:#14100a;padding:10px 20px;border-radius:2px;font-weight:600}
+nav .cta::after{display:none}
+nav .cta:hover{color:#14100a;background:#E3C06C}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.45);color:#fff;padding:9px 16px;font:inherit;cursor:pointer;border-radius:2px}
+
+/* hero */
+.hero{height:100vh;height:100svh;min-height:700px;background:linear-gradient(180deg,#040b1c 0%,#0b1f47 50%,#17356b 80%,#2c5a96 100%);color:#fff;overflow:hidden}
+.hero-photo{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s}
+.hero-photo.on{opacity:.55}
+canvas.sky{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,11,28,.75) 0%,rgba(4,11,28,.35) 45%,rgba(4,11,28,0) 75%),linear-gradient(180deg,rgba(4,11,28,.55) 0%,rgba(4,11,28,0) 30%);pointer-events:none}
+.hero-copy{position:relative;z-index:2;padding-top:clamp(120px,19vh,190px)}
+.hero h1{font-size:clamp(3.1rem,7.6vw,6.7rem);line-height:.95;letter-spacing:-.025em;max-width:11em}
+.ln{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.ln>span{display:inline-block;transform:translateY(108%);animation:rise 1.2s cubic-bezier(.2,.75,.1,1) forwards}
+.ln:nth-child(1)>span{animation-delay:.25s}.ln:nth-child(2)>span{animation-delay:.42s}.ln:nth-child(3)>span{animation-delay:.59s}
+@keyframes rise{to{transform:none}}
+@keyframes settle{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero p.sub{font-size:1.2rem;color:#d5dff2;max-width:46ch;margin:30px 0 34px;opacity:0;animation:settle 1s 1.2s forwards}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:settle 1s 1.4s forwards}
+.hero-foot{position:absolute;left:0;right:0;bottom:0;height:76px;background:#040b1c;z-index:3;border-top:1px solid rgba(209,169,78,.35)}
+.hero-foot .wrap{height:100%;display:flex;align-items:center;gap:22px}
+.count{font-family:var(--serif);font-size:2.6rem;line-height:1;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.count b{color:var(--amber);font-weight:400}
+.foot-note{font-size:.92rem;color:#aebbd6;line-height:1.35;max-width:36ch}
+.foot-link{margin-left:auto;font-size:.92rem;color:#d9e2f4;text-decoration:none;border-bottom:1px solid var(--amber);padding-bottom:2px}
+
+/* statement */
+.statement-sec{background:var(--bg)}
+.statement{font-family:var(--serif);font-size:clamp(1.9rem,4.1vw,3.4rem);line-height:1.16;max-width:24em;margin:0;letter-spacing:-.01em}
+.statement span.w{color:var(--text);opacity:.2;transition:opacity .5s}
+.statement span.w.lit{opacity:1}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:20px 70px;margin-top:64px;justify-content:start;border-top:1px solid var(--line);padding-top:30px}
+.facts strong{font-family:var(--serif);font-weight:400;font-size:2.8rem;line-height:1;display:block}
+.facts span{color:var(--muted);font-size:.95rem}
+
+/* about */
+.about{background:var(--bg-2)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.portrait{aspect-ratio:4/5;background:linear-gradient(170deg,#12295a,#071330);position:relative;overflow:hidden;color:#fff;background-size:cover;background-position:center top}
+.portrait .rt{position:absolute;left:28px;top:18px;font-family:var(--serif);font-size:7.5rem;line-height:1;color:rgba(255,255,255,.92)}
+.portrait .cap{position:absolute;left:0;right:0;bottom:0;padding:70px 28px 26px;background:linear-gradient(0deg,rgba(4,11,28,.92),rgba(4,11,28,0))}
+.portrait .cap b{display:block;font-family:var(--serif);font-weight:400;font-size:1.7rem}
+.portrait .cap span{font-size:.92rem;color:#bcc8e0}
+.portrait .win{position:absolute;right:28px;top:34px;display:grid;grid-template-columns:repeat(4,10px);gap:8px}
+.portrait .win i{width:10px;height:14px;background:var(--amber);opacity:.15;animation:blink 5s infinite}
+@keyframes blink{0%,100%{opacity:.12}45%,60%{opacity:.95}}
+.about h2{margin-bottom:28px}
+.about p{max-width:58ch}
+.principles{margin:34px 0 0;padding:0;list-style:none;display:grid;gap:18px}
+.principles li{border-left:2px solid var(--amber);padding-left:18px;color:var(--muted)}
+.principles b{color:var(--text);font-weight:600}
+
+/* services */
+.rows{margin-top:60px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr 1.3fr .8fr;gap:40px;padding:36px 20px;border-bottom:1px solid var(--line);position:relative;transition:padding .35s}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--amber);transform:scaleY(0);transform-origin:top;transition:transform .35s}
+.row:hover::before{transform:scaleY(1)}
+.row:hover{padding-left:32px}
+.row p{margin:0;color:var(--muted)}
+.row .best{font-size:.92rem;color:var(--muted);border-left:1px solid var(--line);padding-left:22px}
+.row .best b{display:block;color:var(--text);font-weight:600;margin-bottom:2px}
+
+/* sectors */
+.sectors{background:var(--bg-2)}
+.sec-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;margin-top:56px}
+.sec-grid div{display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-top:1px solid var(--line);position:relative}
+.sec-grid div::before{content:"";flex:0 0 12px;height:16px;margin-top:10px;border:1.5px solid var(--muted);transition:background .3s,border-color .3s,box-shadow .3s}
+.sec-grid div:hover::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 18px rgba(209,169,78,.7)}
+.sec-grid h3{font-size:1.9rem}
+.sec-grid p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+
+/* process */
+.tl{position:relative;margin-top:64px;max-width:860px;--p:0}
+.tl::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--amber);transform:scaleY(var(--p));transform-origin:top}
+.step{position:relative;padding:0 0 54px 78px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:10px;top:6px;width:20px;height:20px;background:var(--bg);border:2px solid var(--line);transition:all .4s}
+.step.on::before{background:var(--amber);border-color:var(--amber);box-shadow:0 0 22px rgba(209,169,78,.65)}
+.step .when{font-size:.92rem;color:var(--amber-ink);font-weight:600;margin-bottom:6px}
+.step p{color:var(--muted);max-width:56ch;margin:10px 0 0}
+
+/* results */
+.results{background:var(--night);color:#fff}
+.results .big{font-family:var(--serif);font-size:clamp(5rem,15vw,12rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.results .big b{color:var(--amber);font-weight:400}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-top:30px}
+.res-grid .lead{color:#aebbd6}
+.bars{display:grid;gap:22px}
+.bar .lab{display:flex;justify-content:space-between;font-size:.95rem;color:#d5dff2;margin-bottom:8px}
+.bar .lab span:last-child{font-variant-numeric:tabular-nums;color:#fff}
+.bar .tr{height:10px;background:rgba(255,255,255,.1)}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#A8842C,var(--amber));transition:width 1.6s cubic-bezier(.2,.7,.1,1)}
+.go .bar i{width:var(--w)}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:80px;border-top:1px solid rgba(255,255,255,.14);padding-top:34px}
+.mini strong{font-family:var(--serif);font-weight:400;font-size:3.2rem;line-height:1;display:block;color:#fff}
+.mini span{color:#aebbd6;font-size:.95rem}
+
+/* testimonials */
+.quotes{margin-top:50px;position:relative;min-height:290px}
+figure.q{margin:0;position:absolute;inset:0 auto auto 0;opacity:0;visibility:hidden;transition:opacity .7s,visibility .7s;max-width:30em}
+figure.q.on{opacity:1;visibility:visible;position:relative}
+figure.q blockquote{margin:0;font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.2}
+figure.q figcaption{margin-top:26px;color:var(--muted);font-size:.98rem}
+.dots{display:flex;gap:10px;margin-top:34px}
+.dots button{width:44px;height:6px;border:0;padding:0;background:var(--line);cursor:pointer;position:relative;overflow:hidden}
+.dots button.on{background:var(--amber)}
+
+/* candidates */
+.cand{background:var(--bg-2)}
+.cand-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.cand ul{list-style:none;margin:0;padding:0}
+.cand li{padding:20px 0;border-top:1px solid var(--line);color:var(--muted)}
+.cand li b{color:var(--text);display:block;font-weight:600}
+.cand li:last-child{border-bottom:1px solid var(--line)}
+.btn.dark{background:var(--night);color:#fff;margin-top:12px}
+.btn.dark:hover{background:var(--steel)}
+
+/* faq */
+.faq{max-width:900px}
+details{border-top:1px solid var(--line);padding:26px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.7rem;line-height:1.15;display:flex;justify-content:space-between;gap:24px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:0 0 14px;height:14px;margin-top:10px;background:linear-gradient(var(--amber-ink),var(--amber-ink)) center/100% 2px no-repeat,linear-gradient(var(--amber-ink),var(--amber-ink)) center/2px 100% no-repeat;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:16px 0 0;max-width:62ch}
+
+/* contact */
+.contact{background:var(--deep);color:#fff;padding-top:120px}
+.contact h2{color:#fff}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:2;padding-bottom:110px}
+.contact .lead{color:#bcc8e0}
+.cinfo{margin-top:36px;display:grid;gap:22px}
+.cinfo small{display:block;color:#93a3c4;font-size:.88rem}
+.cinfo a.mail{font-family:var(--serif);font-size:clamp(1.6rem,3.2vw,2.3rem);text-decoration:none;border-bottom:1px solid var(--amber);word-break:break-all}
+form{display:grid;gap:18px}
+label{display:grid;gap:7px;font-size:.92rem;color:#bcc8e0}
+input,select,textarea{font:inherit;color:#fff;background:rgba(4,11,28,.35);border:0;border-bottom:1px solid rgba(255,255,255,.35);padding:13px 4px;width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:0;border-bottom-color:var(--amber);background:rgba(4,11,28,.5)}
+select option{color:#111}
+textarea{min-height:120px;resize:vertical}
+.note{font-size:.85rem;color:#93a3c4;margin:0}
+.dawn{position:absolute;left:0;right:0;bottom:0;height:380px;background:linear-gradient(180deg,#0c1e45 0%,#254a85 50%,#b7814b 100%);z-index:1}
+.dawn canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+footer.foot{background:#040b1c;color:#93a3c4;padding:44px 0;font-size:.92rem}
+footer.foot .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center}
+footer.foot a{color:#d5dff2;text-decoration:none;margin-right:22px}
+footer.foot a:hover{color:var(--amber)}
+
+@media (max-width:980px){
+  .pad{padding:84px 0}
+  .about-grid,.cand-grid,.res-grid,.cgrid{grid-template-columns:1fr;gap:48px}
+  .portrait{max-width:420px}
+  .row{grid-template-columns:1fr;gap:14px;padding:30px 0}
+  .row:hover{padding-left:14px}
+  .row .best{border-left:0;padding-left:0}
+  .sec-grid{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr;gap:26px 40px}
+  .mini{grid-template-columns:1fr}
+  .foot-note{display:none}
+}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav{position:absolute;top:calc(76px + env(safe-area-inset-top,0px));left:0;right:0;background:rgba(7,19,48,.97);display:none;padding:12px 28px 28px}
+  nav.open{display:block}
+  nav ul{flex-direction:column;align-items:flex-start;gap:18px}
+}
+@media (max-width:520px){
+  .count{font-size:2rem}.hero-foot .wrap{gap:14px}.foot-link{display:none}
+  .facts{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ln>span{animation:none;transform:none}
+  .hero p.sub,.hero .actions{animation:none;opacity:1}
+  .portrait .win i{animation:none;opacity:.7}
+  .statement span.w{opacity:1;transition:none}
+  *{transition-duration:.01ms!important}
+}
+
+/* v2: logo, refined palette, motion */
+.brand{gap:13px;line-height:1}
+.logo{flex:none;color:#fff;overflow:visible}
+.logo .lf{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s .15s cubic-bezier(.6,0,.2,1) forwards}
+.logo .ll{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s .9s ease forwards}
+.logo .lb{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:grow .8s cubic-bezier(.2,.8,.2,1) forwards}
+.logo .lb:nth-of-type(2){animation-delay:.7s}.logo .lb:nth-of-type(3){animation-delay:.85s}.logo .lb:nth-of-type(4){animation-delay:1s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes grow{to{transform:scaleY(1)}}
+.brand:hover .lb{animation:pulse 1s ease}
+@keyframes pulse{50%{transform:scaleY(1.12)}}
+.wm{display:flex;flex-direction:column;gap:5px}
+.wm b{font-family:var(--serif);font-weight:400;font-size:1.5rem;letter-spacing:-.01em}
+.wm small{font-family:var(--sans);font-size:.6rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--amber)}
+@media(max-width:560px){.wm small{letter-spacing:.2em}.wm b{font-size:1.3rem}}
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,#A8842C,#E6C677,#D1A94E);z-index:80;pointer-events:none}
+header.site.solid{box-shadow:0 1px 0 rgba(209,169,78,.28)}
+.btn{position:relative;overflow:hidden}
+.btn:not(.line)::before{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:sheen 4.5s 2.5s infinite}
+@keyframes sheen{0%,70%{left:-70%}100%{left:130%}}
+.rvjs .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rvjs .rv.in{opacity:1;transform:none}
+.foot .logo{width:30px;height:30px}
+@media(prefers-reduced-motion:reduce){.logo *,.btn::before{animation:none!important;stroke-dashoffset:0!important;transform:none!important}.rvjs .rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<a class="skip" href="#about">Skip to content</a>
+
+<header class="site" id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><svg class="logo" viewBox="0 0 44 44" width="40" height="40" aria-hidden="true" focusable="false"><rect class="lf" x="1.5" y="1.5" width="41" height="41" rx="3" pathLength="1" fill="none" stroke="currentColor" stroke-width="1.5"/><rect class="lb" x="10" y="22" width="5.5" height="12" fill="#D1A94E"/><rect class="lb" x="19.25" y="15" width="5.5" height="19" fill="#D1A94E"/><rect class="lb" x="28.5" y="8" width="5.5" height="26" fill="#D1A94E"/><path class="ll" d="M8 37.5h28" pathLength="1" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span class="wm"><b>Ryan Thompson</b><small>Executive Search</small></span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#candidates">Candidates</a></li>
+        <li><a class="cta" href="#contact">Brief a search</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="hero-photo" id="heroPhoto"></div>
+  <canvas class="sky" id="heroSky" aria-hidden="true"></canvas>
+  <div class="hero-shade"></div>
+  <div class="wrap hero-copy">
+    <h1><span class="ln"><span>Leaders, placed</span></span><span class="ln"><span>one conversation</span></span><span class="ln"><span>at a time.</span></span></h1>
+    <p class="sub">Ryan Thompson Search finds, assesses and secures senior executives, directors and specialists for organisations that cannot afford a wrong hire.</p>
+    <div class="actions">
+      <a class="btn" href="#contact">Brief a search</a>
+      <a class="btn line" href="#candidates">I am looking for a role</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div class="wrap">
+      <div class="count" aria-label="Over 5,000 placements"><span id="count">0</span><b>+</b></div>
+      <div class="foot-note">placements made. Every lit window above stands for a leader we placed.</div>
+      <a class="foot-link" href="#about">Meet Ryan</a>
+    </div>
+  </div>
+</section>
+
+<section class="statement-sec pad" aria-label="Our approach">
+  <div class="wrap">
+    <p class="statement" id="stmt">Ryan Thompson Search finds senior leaders for organisations that cannot afford a wrong hire. We search deeply, approach quietly, and stay accountable long after the offer is signed.</p>
+    <div class="facts">
+      <div><strong data-count="20" data-suffix="+">20+</strong><span>years in executive search</span></div>
+      <div><strong data-count="40" data-suffix="+">40+</strong><span>countries where we have placed</span></div>
+      <div><strong data-count="94" data-suffix="%">94%</strong><span>of placements still in role after two years</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about pad" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait" id="portrait" role="img" aria-label="Ryan Thompson, founder and managing partner">
+      <div class="win" aria-hidden="true">
+        <i style="animation-delay:.2s"></i><i style="animation-delay:1.7s"></i><i style="animation-delay:3.1s"></i><i style="animation-delay:.9s"></i>
+        <i style="animation-delay:2.4s"></i><i style="animation-delay:.5s"></i><i style="animation-delay:3.9s"></i><i style="animation-delay:1.3s"></i>
+      </div>
+      <div class="rt" id="rt" aria-hidden="true">RT</div>
+      <div class="cap"><b>Ryan Thompson</b><span>Founder and managing partner</span></div>
+    </div>
+    <div>
+      <h2>A search partner who stays on the line.</h2>
+      <p class="lead" style="margin-top:26px">Ryan founded the firm after two decades placing chief executives, directors and heads of function across finance, technology, healthcare and industry.</p>
+      <p>Every mandate is led personally. You deal with one person who knows your business, your board and your market, and who will tell you plainly when a brief needs to change.</p>
+      <ul class="principles">
+        <li><b>Discretion by default.</b> Replacements, restructures and confidential hires are handled without a trace.</li>
+        <li><b>Candid advice.</b> You hear the real cost, timeline and competition before the search begins.</li>
+        <li><b>Depth over volume.</b> A short list of people who have been interviewed in full and referenced.</li>
+        <li><b>Accountability after the offer.</b> We keep in touch with you and your new leader through the first year.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="lead" style="margin-top:20px">Each service is scaled to the seniority and sensitivity of the appointment.</p>
+    <div class="rows">
+      <div class="row"><h3>Executive search</h3><p>Retained search for chief executive, C-suite, managing director and country head roles. We map the market, approach candidates directly and assess them in depth before you meet anyone.</p><div class="best"><b>Best for</b>Roles where a wrong hire costs more than the fee.</div></div>
+      <div class="row"><h3>Senior and specialist recruitment</h3><p>Directors, heads of function and scarce technical talent, delivered as a short, fully referenced list of candidates who are ready to move.</p><div class="best"><b>Best for</b>Growing teams that need a senior hire within weeks.</div></div>
+      <div class="row"><h3>Board and non-executive search</h3><p>Chairs, independent directors and advisory board members chosen for expertise, independence and the way they will work with your existing board.</p><div class="best"><b>Best for</b>Boards adding skills or planning succession.</div></div>
+      <div class="row"><h3>Leadership assessment</h3><p>Structured interviews, competency mapping and referencing that give hiring committees evidence to decide on, plus a development view of every finalist.</p><div class="best"><b>Best for</b>Committees choosing between strong finalists.</div></div>
+      <div class="row"><h3>Talent mapping</h3><p>Confidential intelligence on who is in your market, what they earn and what it would take to move them, before you commit to a hire.</p><div class="best"><b>Best for</b>Planning an expansion, acquisition or new function.</div></div>
+      <div class="row"><h3>Interim leadership</h3><p>Experienced executives who can start quickly and run a function through a transition, turnaround, integration or growth phase.</p><div class="best"><b>Best for</b>Gaps that cannot wait for a permanent hire.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors pad" id="sectors">
+  <div class="wrap">
+    <h2>Where we recruit</h2>
+    <p class="lead" style="margin-top:20px">Deep networks in the industries where leadership decisions carry the most weight.</p>
+    <div class="sec-grid">
+      <div><span><h3>Financial services</h3><p>Banking, asset management, insurance, payments and fintech.</p></span></div>
+      <div><span><h3>Technology</h3><p>Software, cybersecurity, data and AI, cloud and infrastructure.</p></span></div>
+      <div><span><h3>Healthcare and life sciences</h3><p>Pharmaceuticals, biotech, medical devices and care providers.</p></span></div>
+      <div><span><h3>Energy and resources</h3><p>Oil and gas, renewables, mining, utilities and power.</p></span></div>
+      <div><span><h3>Industrial and manufacturing</h3><p>Engineering, supply chain, logistics, aerospace and automotive.</p></span></div>
+      <div><span><h3>Consumer and retail</h3><p>Brands, e-commerce, hospitality, food and luxury.</p></span></div>
+      <div><span><h3>Professional services</h3><p>Consulting, legal, accounting, advisory and real estate.</p></span></div>
+      <div><span><h3>Private equity and venture</h3><p>Portfolio leadership, operating partners and value-creation teams.</p></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="process">
+  <div class="wrap">
+    <h2>How a search runs</h2>
+    <p class="lead" style="margin-top:20px">Five stages with a weekly update from Ryan, so you always know where the search stands.</p>
+    <div class="tl" id="tl">
+      <div class="step"><div class="when">Days 1 to 5</div><h3>Brief</h3><p>A detailed intake session covering the role, success measures, culture, compensation and timeline. We agree what a great hire looks like before anyone is approached.</p></div>
+      <div class="step"><div class="when">Weeks 1 to 4</div><h3>Research and approach</h3><p>We map the market and contact candidates directly, including leaders who are not looking and would never answer an advertisement.</p></div>
+      <div class="step"><div class="when">Weeks 3 to 6</div><h3>Assessment</h3><p>Long-form interviews and referencing narrow the field to a short list, each with a written profile covering strengths, risks and motivation.</p></div>
+      <div class="step"><div class="when">Weeks 5 to 9</div><h3>Presentation and interviews</h3><p>You meet the finalists. We coordinate schedules, gather feedback from both sides and keep expectations aligned.</p></div>
+      <div class="step"><div class="when">Weeks 8 to 14, then the first year</div><h3>Offer and onboarding</h3><p>We negotiate the package, manage notice periods and counter-offers, and check in with you and your new leader through the first twelve months.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="results pad" id="results">
+  <div class="wrap">
+    <div class="big"><span data-count="5000" data-suffix="+">5,000+</span></div>
+    <div class="res-grid" id="resGrid">
+      <p class="lead">Senior placements across more than forty countries. Every one began with a conversation about what the role needed and who would thrive in it.</p>
+      <div class="bars" aria-label="Placements by level">
+        <div class="bar" style="--w:100%"><div class="lab"><span>Vice president and director</span><span>1,900+</span></div><div class="tr"><i></i></div></div>
+        <div class="bar" style="--w:84%"><div class="lab"><span>Senior specialist</span><span>1,600+</span></div><div class="tr"><i></i></div></div>
+        <div class="bar" style="--w:61%"><div class="lab"><span>Chief executive and C-suite</span><span>1,150+</span></div><div class="tr"><i></i></div></div>
+        <div class="bar" style="--w:22%"><div class="lab"><span>Board and non-executive</span><span>420+</span></div><div class="tr"><i></i></div></div>
+      </div>
+    </div>
+    <div class="mini">
+      <div><strong>30 days</strong><span>average time to a first shortlist</span></div>
+      <div><strong>94%</strong><span>of placed leaders still in role after two years</span></div>
+      <div><strong>1 in 3</strong><span>new mandates come from past clients</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="clients">
+  <div class="wrap">
+    <h2>What clients say</h2>
+    <div class="quotes" id="quotes">
+      <figure class="q on"><blockquote>Ryan understood our business in one meeting. The short list held three people we would gladly have hired.</blockquote><figcaption>Chief Executive Officer, financial services group</figcaption></figure>
+      <figure class="q"><blockquote>Discreet, fast and honest about the market. He told us what the role would really cost before we asked.</blockquote><figcaption>Chief People Officer, technology company</figcaption></figure>
+      <figure class="q"><blockquote>He replaced a director without a single rumour. Six months on, the hire is exactly who we needed.</blockquote><figcaption>Chair, industrial group</figcaption></figure>
+      <figure class="q"><blockquote>He treated my career as seriously as the client's vacancy, and he was straight with me at every stage.</blockquote><figcaption>Vice president, placed candidate</figcaption></figure>
+    </div>
+    <div class="dots" id="dots" role="tablist" aria-label="Choose a testimonial"></div>
+  </div>
+</section>
+
+<section class="cand pad" id="candidates">
+  <div class="wrap cand-grid">
+    <div>
+      <h2>For candidates</h2>
+      <p class="lead" style="margin-top:20px">Most of the roles we fill are never advertised. If you are considering your next move, a confidential conversation costs you nothing.</p>
+      <p><a class="btn dark" id="cvLink" href="mailto:ryanthompson.consultant@gmail.com?subject=CV%20submission">Send your CV</a></p>
+    </div>
+    <ul>
+      <li><b>Confidential</b>Your details are never shared without your explicit consent.</li>
+      <li><b>Honest feedback</b>You hear back after every interview, with reasons.</li>
+      <li><b>Market data</b>Salary and package guidance based on live searches, not guesswork.</li>
+      <li><b>Preparation and negotiation</b>Interview briefings and support through to a signed offer.</li>
+      <li><b>No cost to you</b>Candidates are never charged.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pad" id="faq">
+  <div class="wrap faq">
+    <h2>Questions we hear often</h2>
+    <div style="margin-top:50px">
+      <details><summary>How are your fees structured?</summary><p>Retained searches are billed in stages as a percentage of first-year cash compensation. Contingent searches are billed only when a candidate is placed. Terms are confirmed in writing before work begins.</p></details>
+      <details><summary>How long does a search take?</summary><p>Most executive searches deliver a first short list within four to six weeks. An appointment is typically made within eight to fourteen weeks, depending on notice periods.</p></details>
+      <details><summary>Is there a guarantee?</summary><p>Yes. If a placed candidate leaves within the agreed guarantee period, we repeat the search without an additional professional fee. The terms are in every engagement letter.</p></details>
+      <details><summary>Can a search be confidential?</summary><p>Yes. We regularly handle replacements and new roles where the client name and the vacancy must stay private until the right moment.</p></details>
+      <details><summary>Do you recruit across borders?</summary><p>Yes. We search internationally and advise on relocation, notice practices and pay norms in each market.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap cgrid">
+    <div>
+      <h2>Start a conversation</h2>
+      <p class="lead" style="margin-top:22px">Hiring or exploring your next role, send a short note. Ryan replies within one business day.</p>
+      <div class="cinfo">
+        <div><small>Email</small><a class="mail" href="mailto:ryanthompson.consultant@gmail.com">ryanthompson@consultant.com</a></div>
+        <div><small>Hours</small>Monday to Friday, 8:00 to 18:00</div>
+        <div><small>Coverage</small>Local, regional and international mandates</div>
+      </div>
+    </div>
+    <form id="contactForm" novalidate>
+      <label>Your name<input id="fName" autocomplete="name"></label>
+      <label>Your email<input id="fEmail" type="email" autocomplete="email"></label>
+      <label>I am<select id="fType"><option>A company hiring</option><option>A candidate</option><option>Something else</option></select></label>
+      <label>Message<textarea id="fMsg"></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="note">This opens your email app with your message ready to send.</p>
+    </form>
+  </div>
+  <div class="dawn"><canvas class="sky" id="dawnSky" aria-hidden="true"></canvas></div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>&copy; <span id="yr">2026</span> Ryan Thompson Search. Confidential by default.</div>
+    <div><a href="#about">About</a><a href="#services">Services</a><a href="#candidates">Candidates</a><a href="mailto:ryanthompson.consultant@gmail.com">ryanthompson@consultant.com</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---- Photo slots: paste a data URI or image URL here to use a real photograph ---- */
+  var PHOTO_HERO = "";      // full-width background photo for the hero
+  var PHOTO_PORTRAIT = "";  // portrait of Ryan
+  var REAL_EMAIL = "ryanthompson.consultant@gmail.com";
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(s){return document.querySelector(s);}
+  function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
+
+  if(PHOTO_HERO){var hp=$('#heroPhoto');hp.style.backgroundImage='url("'+PHOTO_HERO+'")';requestAnimationFrame(function(){hp.classList.add('on');});}
+  if(PHOTO_PORTRAIT){var pt=$('#portrait');pt.style.backgroundImage='url("'+PHOTO_PORTRAIT+'")';$('#rt').style.display='none';}
+
+  /* ---- Skyline renderer ---- */
+  function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+  var WCOL=['#E6C677','#E6C677','#F0DCA0','#F8EBC8','#9ED0E8'];
+
+  function Skyline(canvas,o){
+    var ctx=canvas.getContext('2d'),W=0,H=0,dpr=1,pad=110,layers=[],stars=[];
+    var start=null,vis=false,raf=0,last=0,mx=0,tmx=0,base=0;
+    var P=o.palette;
+
+    function build(){
+      var r=canvas.getBoundingClientRect(); if(!r.width||!r.height) return;
+      dpr=Math.min(window.devicePixelRatio||1,2);
+      W=r.width;H=r.height;
+      canvas.width=Math.round(W*dpr);canvas.height=Math.round(H*dpr);
+      base=H-o.ground;
+      var rnd=rng(o.seed),small=W<700,scale=small?.62:1,wsc=small?.7:1;
+      var defs=[
+        {k:.22,c:P.far, hMin:.16,hMax:.42,wMin:26,wMax:60, ws:3,hs:4,gx:6, gy:8, lit:.30,gap:[0,6]},
+        {k:.5, c:P.mid, hMin:.20,hMax:.54,wMin:34,wMax:78, ws:4,hs:5,gx:8, gy:11,lit:.34,gap:[2,10]},
+        {k:1,  c:P.near,hMin:.12,hMax:.40,wMin:48,wMax:112,ws:5,hs:7,gx:12,gy:16,lit:.40,gap:[6,34]}
+      ];
+      layers=defs.map(function(d,li){
+        var cv=document.createElement('canvas');
+        cv.width=Math.round((W+pad*2)*dpr);cv.height=Math.round(H*dpr);
+        var c=cv.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);
+        var wins=[],beacons=[],x=-pad;
+        while(x<W+pad){
+          var bw=(d.wMin+rnd()*(d.wMax-d.wMin))*wsc;
+          var s=Math.min(1,Math.max(0,(x/W-.12)/.62));s=s*s*(3-2*s);
+          var m=.36+.64*s;
+          var bh=base*(d.hMin+rnd()*(d.hMax-d.hMin))*m*scale;
+          if(rnd()<.12)bh*=1.22;
+          var top=base-bh;
+          var g=c.createLinearGradient(0,top,0,base);g.addColorStop(0,d.c[0]);g.addColorStop(1,d.c[1]);
+          c.fillStyle=g;c.fillRect(x+pad,top,bw,H-top);
+          c.fillStyle='rgba(150,200,225,.10)';c.fillRect(x+pad,top,bw,1);c.fillRect(x+pad,top,1,bh);
+          var crownH=0;
+          if(rnd()<.38&&bh>base*.18){
+            var cw=bw*(.4+rnd()*.25);crownH=10+rnd()*20;
+            c.fillStyle=g;c.fillRect(x+pad+(bw-cw)/2,top-crownH,cw,crownH);
+            c.fillStyle='rgba(150,200,225,.10)';c.fillRect(x+pad+(bw-cw)/2,top-crownH,cw,1);
+            if(rnd()<.55){var ah=16+rnd()*34;c.fillStyle=d.c[0];c.fillRect(x+pad+bw/2-1,top-crownH-ah,2,ah);
+              if(li>0&&rnd()<.7)beacons.push({x:x+bw/2,y:top-crownH-ah,ph:rnd()*6.28});}
+          }
+          var cols=Math.max(1,Math.floor((bw-8)/d.gx)),offx=x+4+((bw-8)-cols*d.gx)/2+(d.gx-d.ws)/2;
+          for(var yy=top+10;yy<base-12;yy+=d.gy){
+            for(var cc=0;cc<cols;cc++){
+              if(rnd()<d.lit*o.density){
+                var wx=offx+cc*d.gx;
+                var dl=o.delay+Math.abs(wx-W*o.focus)/W*o.spread+rnd()*o.jitter;
+                wins.push({x:wx,y:yy,d:dl,a:.5+rnd()*.5,col:WCOL[(rnd()*WCOL.length)|0],tw:rnd()<.07,ph:rnd()*6.28});
+              }
+            }
+          }
+          x+=bw+d.gap[0]+rnd()*(d.gap[1]-d.gap[0]);
+        }
+        return {cv:cv,wins:wins,beacons:beacons,k:d.k,ws:d.ws,hs:d.hs,glow:li===2};
+      });
+      stars=[];
+      for(var i=0;i<(o.stars||0);i++)stars.push({x:rnd()*W,y:rnd()*base*.55,r:.4+rnd()*.9,ph:rnd()*6.28});
+      draw(reduce?999:(start===null?0:(performance.now()-start)/1000));
+    }
+
+    function draw(t){
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.clearRect(0,0,W,H);
+      ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+      var gl=ctx.createRadialGradient(W*.72,base,0,W*.72,base,W*.75);
+      gl.addColorStop(0,P.glow);gl.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=gl;ctx.fillRect(0,0,W,H);
+      for(var s=0;s<stars.length;s++){var st=stars[s];ctx.globalAlpha=.25+.45*(.5+.5*Math.sin(t*.8+st.ph));ctx.fillStyle='#dfeeff';ctx.fillRect(st.x,st.y,st.r,st.r);}
+      ctx.globalAlpha=1;
+      var rect=canvas.getBoundingClientRect(),sy=Math.max(0,-rect.top);
+      for(var li=0;li<layers.length;li++){
+        var L=layers[li],ox=mx*L.k*16,oy=sy*(1-L.k)*.07;
+        ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+        ctx.drawImage(L.cv,-pad+ox,oy,W+pad*2,H);
+        ctx.globalCompositeOperation='lighter';
+        var cur='';
+        for(var i=0;i<L.wins.length;i++){
+          var w=L.wins[i];if(t<w.d)continue;
+          var a=Math.min(1,(t-w.d)/.8);
+          if(w.tw)a*=.65+.35*Math.sin(t*.9+w.ph);
+          if(w.col!==cur){ctx.fillStyle=w.col;cur=w.col;}
+          ctx.globalAlpha=a*w.a;
+          ctx.fillRect(w.x+ox,w.y+oy,L.ws,L.hs);
+          if(L.glow){ctx.globalAlpha=a*w.a*.14;ctx.fillRect(w.x+ox-3,w.y+oy-3,L.ws+6,L.hs+6);}
+        }
+        ctx.globalCompositeOperation='source-over';
+        if(t>2.5){
+          ctx.fillStyle='#ff4b3e';
+          for(var b=0;b<L.beacons.length;b++){
+            var be=L.beacons[b],on=Math.sin(t*2.1+be.ph)>.55;
+            ctx.globalAlpha=on?1:.15;
+            ctx.beginPath();ctx.arc(be.x+ox,be.y+oy,1.7,0,6.283);ctx.fill();
+            if(on){ctx.globalAlpha=.18;ctx.beginPath();ctx.arc(be.x+ox,be.y+oy,6,0,6.283);ctx.fill();}
+          }
+        }
+        ctx.globalAlpha=1;
+        if(li<layers.length-1){
+          var fg=ctx.createLinearGradient(0,base-240,0,base);
+          fg.addColorStop(0,'rgba(0,0,0,0)');fg.addColorStop(1,P.fog);
+          ctx.fillStyle=fg;ctx.fillRect(0,base-240,W,240+o.ground);
+        }
+      }
+      if(!reduce){
+        for(var j=0;j<3;j++){
+          var cx=((t*(6+j*4)+j*W/3)%(W+600))-300;
+          ctx.save();ctx.translate(cx,base-30-j*18);ctx.scale(1,.16);
+          var rg=ctx.createRadialGradient(0,0,0,0,0,320);
+          rg.addColorStop(0,P.mist);rg.addColorStop(1,'rgba(0,0,0,0)');
+          ctx.fillStyle=rg;ctx.beginPath();ctx.arc(0,0,320,0,6.283);ctx.fill();ctx.restore();
+        }
+      }
+    }
+
+    function frame(now){
+      raf=0;
+      if(!vis||document.hidden)return;
+      if(start===null)start=now;
+      if(now-last<32){raf=requestAnimationFrame(frame);return;}
+      last=now;
+      mx+=(tmx-mx)*.06;
+      draw((now-start)/1000);
+      raf=requestAnimationFrame(frame);
+    }
+    function kick(){if(reduce){draw(999);return;}if(!raf)raf=requestAnimationFrame(frame);}
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis)kick();},{threshold:.05}).observe(canvas);
+    }else{vis=true;kick();}
+    document.addEventListener('visibilitychange',function(){if(!document.hidden&&vis)kick();});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build();},150);});
+    if(!reduce&&o.mouse){window.addEventListener('pointermove',function(e){tmx=(e.clientX/window.innerWidth-.5)*2;},{passive:true});}
+    build();
+    return {restart:function(){start=null;}};
+  }
+
+  Skyline($('#heroSky'),{
+    seed:20,ground:76,density:1,delay:.7,spread:3.8,jitter:2.4,focus:.72,stars:90,mouse:true,
+    palette:{far:['#1d475c','#10303e'],mid:['#123145','#0a2231'],near:['#0a2230','#050f16'],
+             glow:'rgba(209,169,78,.34)',fog:'rgba(14,52,66,.55)',mist:'rgba(120,175,190,.10)'}
+  });
+  Skyline($('#dawnSky'),{
+    seed:7,ground:0,density:.6,delay:.2,spread:2.4,jitter:1.6,focus:.5,stars:0,mouse:false,
+    palette:{far:['#6d8f98','#4d747f'],mid:['#2f5967','#1f4553'],near:['#10303d','#08202b'],
+             glow:'rgba(255,190,110,.45)',fog:'rgba(190,140,90,.35)',mist:'rgba(255,214,160,.10)'}
+  });
+
+  /* ---- Counters ---- */
+  function fmt(n){return n.toLocaleString('en-US');}
+  function countUp(el,to,dur,suffix,delay){
+    if(reduce){el.textContent=fmt(to)+(suffix||'');return;}
+    setTimeout(function(){
+      var s=performance.now();
+      (function step(n){
+        var p=Math.min(1,(n-s)/dur),e=1-Math.pow(1-p,3);
+        el.textContent=fmt(Math.round(to*e))+(suffix||'');
+        if(p<1)requestAnimationFrame(step);
+      })(s);
+    },delay||0);
+  }
+  countUp($('#count'),5000,6000,'',600);
+  var cio=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){var el=e.target;cio.unobserve(el);countUp(el,+el.dataset.count,1800,el.dataset.suffix||'',0);}
+    });
+  },{threshold:.6});
+  $$('[data-count]').forEach(function(el){if(!reduce)el.textContent='0'+(el.dataset.suffix||'');cio.observe(el);});
+
+  /* ---- Bars ---- */
+  var rg=$('#resGrid');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e,o){if(e[0].isIntersecting){rg.classList.add('go');o.disconnect();}},{threshold:.3}).observe(rg);
+  }else{rg.classList.add('go');}
+
+  /* ---- Statement words ---- */
+  var stmt=$('#stmt'),words=stmt.textContent.trim().split(/\s+/);
+  stmt.innerHTML=words.map(function(w){return '<span class="w">'+w+'</span>';}).join(' ');
+  var wEls=$$('#stmt .w');
+
+  /* ---- Timeline ---- */
+  var tl=$('#tl'),steps=$$('.step');
+
+  /* ---- Scroll handler ---- */
+  var hdr=$('#hdr'),tick=false;
+  function onScroll(){
+    tick=false;
+    var vh=window.innerHeight;
+    hdr.classList.toggle('solid',window.scrollY>60);
+    wEls.forEach(function(w){w.classList.toggle('lit',reduce||w.getBoundingClientRect().top<vh*.68);});
+    var r=tl.getBoundingClientRect();
+    var p=Math.max(0,Math.min(1,(vh*.62-r.top)/r.height));
+    tl.style.setProperty('--p',reduce?1:p.toFixed(3));
+    steps.forEach(function(s){s.classList.toggle('on',reduce||s.getBoundingClientRect().top<vh*.62);});
+  }
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll);}},{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+
+  /* ---- Testimonials ---- */
+  var qs=$$('#quotes .q'),dots=$('#dots'),qi=0,qt;
+  qs.forEach(function(_,i){
+    var b=document.createElement('button');b.setAttribute('aria-label','Testimonial '+(i+1));
+    b.addEventListener('click',function(){show(i);restart();});dots.appendChild(b);
+  });
+  var dbs=$$('#dots button');
+  function show(i){qi=i;qs.forEach(function(q,k){q.classList.toggle('on',k===i);});dbs.forEach(function(d,k){d.classList.toggle('on',k===i);});}
+  function restart(){clearInterval(qt);if(!reduce)qt=setInterval(function(){show((qi+1)%qs.length);},8000);}
+  show(0);restart();
+  $('#quotes').addEventListener('mouseenter',function(){clearInterval(qt);});
+  $('#quotes').addEventListener('mouseleave',restart);
+
+  /* ---- Nav ---- */
+  var btn=$('#menuBtn'),nav=$('#nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}});
+  $('#yr').textContent=new Date().getFullYear();
+
+  /* ---- Contact form ---- */
+  $('#contactForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=$('#fName').value.trim(),m=$('#fEmail').value.trim(),t=$('#fType').value,g=$('#fMsg').value.trim();
+    if(!n||!m||!g){alert('Please add your name, email and a short message.');return;}
+    var subj=encodeURIComponent('Enquiry from '+n+' ('+t+')');
+    var body=encodeURIComponent(g+'\n\nName: '+n+'\nEmail: '+m);
+    window.location.href='mailto:'+REAL_EMAIL+'?subject='+subj+'&body='+body;
+  });
+})();
+</script>
+<script>
+(function(){
+var d=document,r=d.documentElement,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var p=d.getElementById('prog');
+function pg(){var h=r.scrollHeight-innerHeight;p.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'}
+addEventListener('scroll',pg,{passive:true});pg();
+if(rm||!('IntersectionObserver' in window))return;
+r.classList.add('rvjs');
+var sel='.pad h2,.pad>.wrap>.lead,.about-grid>div,.row,.sec-grid>div,.principles li,.mini>div,.res-grid>*,.cand-grid>*,.cand li,details,.cgrid>*,.big';
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.classList.remove('rv','in')},1300)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+d.querySelectorAll(sel).forEach(function(el){var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.classList.add('rv');el.style.transitionDelay=Math.min(i,5)*80+'ms';io.observe(el)});
+})();
+</script>
+</body>
+</html>
